@@ -50,6 +50,10 @@ async function main() {
       const parsed = JSON.parse(data);
       await movieModel.insertMany(parsed);
       break;
+    case "get-all":
+      const show = await movieModel.find({});
+      console.log(show);
+      break;
     default:
       throw Error("command not found");
   }
